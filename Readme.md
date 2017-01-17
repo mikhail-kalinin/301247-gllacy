@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Михаил Калинин](https://up.htmlacademy.ru/htmlcss/16/user/301247).
-* Наставник: `Неизвестно`.
+* Наставник: [Леонид Лебедев] (https://htmlacademy.ru/profile/leonidlebedev).
 
 ---
 
