@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-			<title>Сливочное мороженое</title>
+		<title>Сливочное мороженое</title>
 	</head>
 	<body>
 		<header class="main-header">
@@ -39,19 +39,80 @@
 					</ul>
 				</nav>
 				<div class="user-block">
-					<a class="search" href="#">2 товара</a>
-					<a class="login" href="#">Вход</a>
-					<a class="cart" href="#">Пусто</a>
+					<div class="user-search">
+						<a class="view-hidden" href="#">Поиск</a>
+						<div class="hidden-block">
+							<form class="hidden-form" action="https://echo.htmlacademy.ru" method="get">
+								<input class="hidden-input" type="text" name="search-text" value="" placeholder="Что ищем?">
+								<button class="btn-search" type="submit">Поиск</button>
+							</form>
+						</div>
+					</div>
+					<div class="user-login">
+						<a class="view-hidden" href="#">Вход</a>
+						<div class="hidden-block">
+							<form class="hidden-form" action="https://echo.htmlacademy.ru" method="post">
+								<input class="hidden-input" type="email" name="login-email" value="" placeholder="Электронная почта">
+								<input class="hidden-input" type="password" name="login-pass" value="" placeholder="Пароль">
+								<button class="btn" type="submit">Войти</button>
+								<a class="hidden-link" href="#">Забыли пароль?</a>
+								<a class="hidden-link" href="#">Новая регистрация</a>
+							</form>
+						</div>
+					</div>
+					<div class="user-cart">
+						<a class="view-hidden" href="#">2 товара</a>
+						<div class="hidden-block">
+							<table class="hidden-table">
+								<tr class="table-item">
+									<td>
+										<button class="btn-delete" type="button">Удалить</button>
+									</td>
+									<td>
+										<img class="table-image" src="http://placehold.it/150x100" width="150" height="100" alt="HTML Academy">
+									</td>
+									<td>
+										<p class="table-name">Пломбир с апельсиновым джемом</p>
+									</td>
+									<td>
+										<p class="table-count">1,5 кг x <span class="price-per-unit">200 руб.</span></p>
+									</td>
+									<td>
+										<p class="table-price">300 руб.</p>
+									</td>
+								</tr>
+								<tr class="table-item">
+									<td>
+										<button class="btn-delete" type="button">Удалить</button>
+									</td>
+									<td>
+										<img class="table-image" src="http://placehold.it/150x100" width="150" height="100" alt="HTML Academy">
+									</td>
+									<td>
+										<p class="table-name">Клубничный пломбир с присыпкой из белого шоколада</p>
+									</td>
+									<td>
+										<p class="table-count">1,5 кг x <span class="price-per-unit">300 руб.</span></p>
+									</td>
+									<td>
+										<p class="table-price">450 руб.</p>
+									</td>
+								</tr>
+							</table>
+							<p class="summary">Итого: 750 руб.</p>
+							<a class="btn" href="#">Оформить заказ</a>
+						</div>
+					</div>
 				</div>
 				<div class="info">
 					<span class="time">С 10 до 20, ежедневно</span><br>
-					<a class="phone" href="#">8 812 450-25-25</a>
+					<a class="phone" href="tel:+78124502525">8 812 450-25-25</a>
 				</div>
 			</div>
 		</header>
 		<main class="container">
 			<div class="page-title">
-				<nav class="breadcrumbs">
+				<div class="breadcrumbs">
 					<ul class="breadcrumbs-list">
 						<li class="breadcrumbs-item">
 							<a class="breadcrumbs-link" href="index.html">Главная</a>
@@ -63,7 +124,7 @@
 							<a class="breadcrumbs-link">Сливочное</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 				<h1>Сливочное мороженое</h1>
 			</div>
 			<form class="catalog-filters" action="https://echo.htmlacademy.ru" method="get">
@@ -82,10 +143,10 @@
 				</fieldset>
 				<fieldset>
 					<legend>Жирность:</legend>
-					<label><input type="radio" name="fat-content" value="0">0%</label> 
-					<label><input type="radio" name="fat-content" value="less-10">до 10%</label> 
-					<label><input type="radio" name="fat-content" value="less-30">до 30%</label> 
-					<label><input type="radio" name="fat-content" value="30-more">выше 30%</label> 
+					<label><input type="radio" name="fat-content" value="0">0%</label>
+					<label><input type="radio" name="fat-content" value="less-10">до 10%</label>
+					<label><input type="radio" name="fat-content" value="less-30">до 30%</label>
+					<label><input type="radio" name="fat-content" value="30-more">выше 30%</label>
 				</fieldset>
 				<fieldset>
 					<legend>Наполнители:</legend>
@@ -217,62 +278,5 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popups">
-			<div class="popup-search">
-				<form class="popup-form" action="https://echo.htmlacademy.ru" method="get">
-					<input class="popup-input" type="text" name="search-text" value="" placeholder="Что ищем?">
-					<button class="btn-search" type="submit">Поиск</button>
-				</form>
-			</div>
-			<div class="popup-login">
-				<form class="popup-form" action="https://echo.htmlacademy.ru" method="post">
-					<input class="popup-input" type="email" name="login-email" value="" placeholder="Электронная почта">
-					<input class="popup-input" type="password" name="login-pass" value="" placeholder="Пароль">
-					<button class="btn" type="submit">Войти</button>
-					<a class="popup-link" href="#">Забыли пароль?</a>
-					<a class="popup-link" href="#">Новая регистрация</a>
-				</form>
-			</div>
-			<div class="popup-cart">
-				<table class="cart-table">
-					<tr class="table-item">
-						<td>
-							<button class="btn-delete" type="button">Удалить</button>
-						</td>
-						<td>
-							<img class="table-image" src="http://placehold.it/150x100" width="150" height="100" alt="HTML Academy">
-						</td>
-						<td>
-							<p class="table-name">Пломбир с апельсиновым джемом</p>
-						</td>
-						<td>
-							<p class="table-count">1,5 кг x <span class="price-per-unit">200 руб.</span></p>
-						</td>
-						<td>
-							<p class="table-price">300 руб.</p>
-						</td>
-					</tr>
-					<tr class="table-item">
-						<td>
-							<button class="btn-delete" type="button">Удалить</button>
-						</td>
-						<td>
-							<img class="table-image" src="http://placehold.it/150x100" width="150" height="100" alt="HTML Academy">
-						</td>
-						<td>
-							<p class="table-name">Клубничный пломбир с присыпкой из белого шоколада</p>
-						</td>
-						<td>
-							<p class="table-count">1,5 кг x <span class="price-per-unit">300 руб.</span></p>
-						</td>
-						<td>
-							<p class="table-price">450 руб.</p>
-						</td>
-					</tr>
-				</table>
-				<p class="summary">Итого: 750 руб.</p>
-				<a class="btn" href="#">Оформить заказ</a>
-			</div>
-		</div>
 	</body>
 </html>

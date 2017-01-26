@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-			<title>Gllacy Shop</title>
+		<title>Gllacy Shop</title>
 	</head>
 	<body>
 		<header class="main-header">
@@ -39,13 +39,35 @@
 					</ul>
 				</nav>
 				<div class="user-block">
-					<a class="search" href="#">Поиск</a>
-					<a class="login" href="#">Вход</a>
-					<a class="cart" href="#">Пусто</a>
+					<div class="user-search">
+						<a class="view-hidden" href="#">Поиск</a>
+						<div class="hidden-block">
+							<form class="hidden-form" action="https://echo.htmlacademy.ru" method="get">
+								<input class="hidden-input" type="text" name="search-text" value="" placeholder="Что ищем?">
+								<button class="btn-search" type="submit">Поиск</button>
+							</form>
+						</div>
+					</div>
+					<div class="user-login">
+						<a class="view-hidden" href="#">Вход</a>
+						<div class="hidden-block">
+							<form class="hidden-form" action="https://echo.htmlacademy.ru" method="post">
+								<input class="hidden-input" type="email" name="login-email" value="" placeholder="Электронная почта">
+								<input class="hidden-input" type="password" name="login-pass" value="" placeholder="Пароль">
+								<button class="btn" type="submit">Войти</button>
+								<a class="hidden-link" href="#">Забыли пароль?</a>
+								<a class="hidden-link" href="#">Новая регистрация</a>
+							</form>
+						</div>
+					</div>
+					<div class="user-cart">
+						<a class="view-hidden" href="#">Пусто</a>
+						<div class="hidden-block"></div>
+					</div>
 				</div>
 				<div class="info">
 					<span class="time">С 10 до 20, ежедневно</span><br>
-					<a class="phone" href="#">8 812 450-25-25</a>
+					<a class="phone" href="tel:+78124502525">8 812 450-25-25</a>
 				</div>
 			</div>
 		</header>
@@ -119,16 +141,18 @@
 					</li>
 				</ul>
 			</section>
-			<div class="blog">
-				<h2 class="blog-title">Новое в нашем блоге</h2>
-				<a class="blog-link" href="#">10 способов сервировки фруктовых щербетов к столу</a>
-			</div>
-			<div class="subscription">
-				<h2 class="subscription-title">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно=)</h2>
-				<form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
-					<input type="email" name="sub-email" value="" placeholder="Электронная почта">
-					<button class="btn" type="submit">Отправить</button>
-				</form>
+			<div class="main-row">
+				<article class="blog">
+					<h2 class="blog-title">Новое в нашем блоге</h2>
+					<a class="blog-link" href="#">10 способов сервировки фруктовых щербетов к столу</a>
+				</article>
+				<article class="subscription">
+					<h2 class="subscription-title">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно=)</h2>
+					<form class="subscription-form" action="https://echo.htmlacademy.ru" method="post">
+						<input type="email" name="sub-email" value="" placeholder="Электронная почта">
+						<button class="btn" type="submit">Отправить</button>
+					</form>
+				</article>
 			</div>
 			<div class="map">
 				<div class="feedback">
@@ -165,35 +189,15 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popups">
-			<div class="popup-search">
-				<form class="popup-form" action="https://echo.htmlacademy.ru" method="get">
-					<input class="popup-input" type="text" name="search-text" value="" placeholder="Что ищем?">
-					<button class="btn-search" type="submit">Поиск</button>
-				</form>
-			</div>
-			<div class="popup-login">
-				<form class="popup-form" action="https://echo.htmlacademy.ru" method="post">
-					<input class="popup-input" type="email" name="login-email" value="" placeholder="Электронная почта">
-					<input class="popup-input" type="password" name="login-pass" value="" placeholder="Пароль">
-					<button class="btn" type="submit">Войти</button>
-					<a class="popup-link" href="#">Забыли пароль?</a>
-					<a class="popup-link" href="#">Новая регистрация</a>
-				</form>
-			</div>
-			<div class="popup-cart">
-				<!--Пока ничего-->
-			</div>
-			<div class="popup-feedback">
-				<h2 class="popup-title">Мы обязательно вам ответим!</h2>
-				<button class="btn-close" type="button">Закрыть</button>
-				<form class="popup-form" action="https://echo.htmlacademy.ru" method="post">
-					<input class="popup-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?">
-					<input class="popup-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?">
-					<textarea class="popup-input popup-comment" name="feedback-comment" rows="10" cols="50" placeholder="Напишите что-нибудь..."></textarea>
-					<button class="btn" type="submit">Отправить</button>
-				</form>
-			</div>
+		<div class="modal-feedback">
+			<h2 class="modal-title">Мы обязательно вам ответим!</h2>
+			<button class="btn-close" type="button">Закрыть</button>
+			<form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+				<input class="modal-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?">
+				<input class="modal-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?">
+				<textarea class="modal-input modal-comment" name="feedback-comment" rows="10" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+				<button class="btn" type="submit">Отправить</button>
+			</form>
 		</div>
 	</body>
 </html>
