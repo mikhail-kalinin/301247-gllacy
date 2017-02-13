@@ -623,6 +623,11 @@ body > input[type="radio"] {
   font-size: 16px;
 }
 
+.item > .btn {
+  position: absolute;
+  display: none;
+}
+
 .item.hit::after {
   content: "";
   position: absolute;
@@ -632,6 +637,29 @@ body > input[type="radio"] {
   height: 61px;
 
   background: url("../img/sprite.png") 0 -350px no-repeat;
+}
+
+.item:hover {
+  z-index: 200;
+}
+
+.item:hover::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 125%;
+  top: -6px;
+  left: -5%;
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.4);
+}
+
+.item:hover > .btn {
+  display: block;
+  left: 10%;
+  bottom: -55px;
 }
 
 .item-figure {
@@ -688,14 +716,6 @@ body > input[type="radio"] {
 
 .item:nth-child(4n+4) {
   margin-right: 0;
-}
-
-.item > .btn {
-  position: absolute;
-  display: none;
-}
-
-.item:hover {
 }
 
 .main-footer{
@@ -759,8 +779,6 @@ body > input[type="radio"] {
   margin:0;
   padding: 0;
   padding-top: 14px;
-
-  text-indent: -9999px;
 }
 
 .links-item {
@@ -1248,7 +1266,7 @@ body > input[type="radio"] {
   width: 48.9%;
   margin: 0;
   padding: 0;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 
 }
 
@@ -1265,21 +1283,283 @@ body > input[type="radio"] {
 .catalog-filters {
   width: 100%;
   margin-bottom: 40px;
-
-  font-size: 0px;
 }
 
-.filters-item {
+.filter-group input[type=checkbox], .filter-group input[type=radio] {
+  display: none;
+}
+
+.filter-group input[type=checkbox] + label, .filter-group input[type=radio] + label {
+  cursor: pointer;
+}
+
+.filter-group input[type=checkbox] + label::before, .filter-group input[type=radio] + label::before {
+  content: "";
   display: inline-block;
-  font-size: 12px;
+  vertical-align: top;
+
+  height: 22px;
+  width: 21px;
+  margin: 0 10px 0 0;
+  background: url("../img/sprite.png") no-repeat;
 }
 
-.filters-item.sort {
-  width: 193px;
+.filter-group input[type=radio] + label::before {
+  margin: -2px 10px 0 0;
 }
 
-.sort-list {
+.filter-group input[type=checkbox] + label::before {
+  background-position: 0 -1150px;
+}
+
+.filter-group input[type=checkbox] + label:hover::before {
+  background-position: -50px -1150px;
+}
+
+.filter-group input[type=radio] + label::before {
+  background-position: 0 -1200px;
+}
+
+.filter-group input[type=radio] + label:hover::before {
+  background-position: -50px -1200px;
+}
+
+.filter-group input[type=checkbox]:checked + label::before {
+  background-position: -150px -1150px;
+}
+
+.filter-group input[type=checkbox]:checked + label:hover::before {
+  background-position: -200px -1150px;
+}
+
+.filter-group input[type=radio]:checked + label::before {
+  background-position: -150px -1200px;
+}
+
+.filter-group input[type=radio]:checked + label:hover::before {
+  background-position:  -200px -1200px;
+}
+
+.filter-group input[type=checkbox]:disabled + label::before {
+  background-position: -100px -1150px;
+}
+
+.filter-group input[type=radio]:disabled + label::before {
+  background-position: -100px -1200px;
+}
+
+.filter-group input[type=checkbox]:checked:disabled + label::before {
+  background-position: -250px -1150px;
+}
+
+.filter-group input[type=radio]:checked:disabled + label::before {
+  background-position: -250px -1200px;
+}
+
+.filter-group {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  margin-right: 25px;
+  margin-bottom: 14px;
+  padding: 0;
+
+  font-size: 0;
+
   border: none;
+  background-color: transparent;
+}
+
+.filter-group.sort select {
+  width: 177px;
+  padding-left: 16px;
+  height: 36px;
+
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.filter-group select:hover {
+  color: #323232;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+.filter-group.range {
+  min-width: 219px;
+}
+
+.range-controls {
+  position: relative;
+  height: 36px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 16px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+}
+
+.range-controls .scale {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.range-controls .bar {
+  position: absolute;
+  left: 33px;
+  width: 106px;
+  height: 4px;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(105, 105, 105, 1);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 28px;
+}
+
+.range-controls .toggle-max {
+  left: 127px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  font-weight: 400;
+  font-size:14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.price-controls input {
+  width: 35px;
+  margin: 0;
+  padding: 0 5px;
+
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+
+  border: none;
+  background: transparent;
+}
+
+.filter-name {
+  padding-left: 16px;
+  padding-bottom: 7px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.filter-list {
+  margin: 0;
+  padding: 8px 15px 8px 16px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  min-width: 193px;
+  border-radius: 18px;
+  list-style: none;
+}
+
+.checkbox .filter-list {
+  padding: 8px 15px 6px 16px;
+}
+
+.filter-item {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-right: 15px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  cursor: pointer;
+}
+
+.radio .filter-item  {
+  padding-right: 15px;
+}
+
+.checkbox .filter-item  {
+  padding-right: 19px;
+}
+
+.filter-item:last-child {
+  padding-right: 0;
+}
+
+.btn-filters-accept {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  margin-top: 22px;
+  padding: 7px 28px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.btn-filters-accept:hover {
+  padding: 9px 30px;
+
+  color: #323232;
+
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.btn-filters-accept:active {
+  padding: 9px 30px;
+
+  color: #323232;
+
+  background-color: rgba(234, 234, 234, 1);
+  border: none;
+  box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 1);
 }
 
 .catalog-items {
@@ -1296,6 +1576,7 @@ body > input[type="radio"] {
 .pagination-list {
   float: right;
   margin: 0;
+  margin-right: -10px;
   padding: 0;
 
   font-size: 0;
@@ -1306,50 +1587,70 @@ body > input[type="radio"] {
   position: relative;
   display: inline-block;
   vertical-align: top;
+  margin-right: 3px;
 
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
 }
 
+.pagination-item:last-child {
+  margin-right: 0px;
+}
+
 .pagination-link {
   display: block;
-  padding-left: 9px;
-  padding-right: 9px;
-  margin-right: 3px;
+  width: 26px;
+  padding: 4px 3px;
 
   color: #ffffff;
   text-align: center;
   text-decoration: none;
 }
 
+.pagination-item.current .pagination-link {
+  color: #323232;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.pagination-item:hover .pagination-link {
+  color: #323232;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.pagination-prev.current .pagination-link {
+  background-color: transparent;
+}
+
+.pagination-next.current .pagination-link{
+  background-color: transparent;
+}
+
 .pagination-prev, .pagination-next {
   text-indent: -9999px;
 }
 
-.pagination-prev .pagination-link::before {
+.pagination-prev .pagination-link::before, .pagination-next .pagination-link::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 2px;
+  left: 7px;
+  top: 6px;
   width: 9px;
   height: 14px;
 
   background: url("../img/sprite.png") 0 -1050px no-repeat;
 }
 
-.pagination-next .pagination-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 9px;
-  height: 14px;
-
-  background: url("../img/sprite.png") 0 -1100px no-repeat;
+.pagination-prev .pagination-link::before {
+  background-position: 0 -1050px;
 }
 
-.pagination-item:last-child .pagination-link{
-  padding-right: 0;
-  margin-right: 0;
+.pagination-next .pagination-link::before {
+  background-position: 0 -1100px;
+}
+
+.pagination-prev.current .pagination-link::before, .pagination-next.current .pagination-link::before {
+  opacity: 0.2;
 }
