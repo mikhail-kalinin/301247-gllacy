@@ -26,8 +26,7 @@ body > input[type="radio"] {
   margin-left: auto;
   margin-right: auto;
 
-  background: #849d8f top center no-repeat;
-  background: url("../img/backlight.png") top center no-repeat;
+  background: url("../img/backlight.png") top center repeat-x;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
@@ -159,7 +158,7 @@ body > input[type="radio"] {
 .dropdown-list {
   position: absolute;
   left: -5px;
-  z-index: 100;
+  z-index: 1;
   display: none;
   margin: 0;
   margin-top: 13px;
@@ -361,7 +360,7 @@ body > input[type="radio"] {
 .user-item .hidden-block {
   position: absolute;
   right: 2px;
-  z-index: 100;
+  z-index: 1;
   display: none;
   margin: 0;
   margin-top: 5px;
@@ -602,6 +601,10 @@ body > input[type="radio"] {
   text-decoration: none;
 }
 
+.info .phone:hover {
+  color: #ffbc9e;
+}
+
 .btn {
   display: inline-block;
   vertical-align: top;
@@ -696,7 +699,7 @@ body > input[type="radio"] {
 }
 
 .item:hover {
-  z-index: 200;
+  z-index: 1;
 }
 
 .item:hover::before {
@@ -776,7 +779,7 @@ body > input[type="radio"] {
 
 .item-name {
   position: relative;
-  z-index: 300;
+  z-index: 5;
   margin:0;
   padding: 0 6px;
   padding-top: 1px;
@@ -967,7 +970,7 @@ body > input[type="radio"] {
   position: absolute;
   bottom: 22px;
   left: 0;
-  z-index: 100;
+  z-index: 1;
 
   font-size: 0;
 }
@@ -998,16 +1001,19 @@ body > input[type="radio"] {
 #btn-1:checked ~ .site-wrapper {
   background-color: #849d8f;
   background-image: url("../img/slider-1.png");
+  background-repeat: no-repeat;
 }
 
 #btn-2:checked ~ .site-wrapper {
   background-color: #8996a6;
   background-image: url("../img/slider-2.png");
+  background-repeat: no-repeat;
 }
 
 #btn-3:checked ~ .site-wrapper {
   background-color: #9d8b84;
   background-image: url("../img/slider-3.png");
+  background-repeat: no-repeat;
 }
 
 #btn-1:checked ~ .site-wrapper label[for="btn-1"],
@@ -1272,9 +1278,9 @@ body > input[type="radio"] {
   padding: 10px 16px;
 }
 
-.map-content {
+.map-interactive {
   position: absolute;
-  z-index: 50;
+  z-index: 1;
   left: 0;
   width: 100%;
   min-width: 900px;
@@ -1285,7 +1291,7 @@ body > input[type="radio"] {
 
 .feedback {
   position: relative;
-  z-index: 100;
+  z-index: 5;
   width:302px;
   float: right;
   min-height: 305px;
@@ -1317,15 +1323,41 @@ body > input[type="radio"] {
   line-height: 24px;
 }
 
+.feedback-contacts .phone {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #323232;
+  text-decoration: none;
+}
+
+.feedback-contacts .phone:hover {
+  color: #e84d37;
+}
+
 .feedback .btn {
   width: 252px;
   margin-top: 6px;
 }
 
 .modal-feedback {
-  position: fixed;
   display: none;
-  z-index:200;
+}
+
+.modal-overlay {
+  width:100%;
+  height:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  position: fixed;
+  z-index:100;
   top: 50%;
   margin-top: -221px;
   left: 50%;
@@ -1390,6 +1422,10 @@ body > input[type="radio"] {
   float: right;
   margin-top: 25px;
 }
+
+.modal-feedback-show {
+  display: block;
+}
 /*Стили для внутренней страницы*/
 .page-title {
   width: 48.9%;
@@ -1397,7 +1433,6 @@ body > input[type="radio"] {
   padding: 0;
   margin-bottom: 28px;
 }
-
 
 .title-text {
   margin: 0;
@@ -1509,7 +1544,7 @@ body > input[type="radio"] {
 
 .filter-group.sort select {
   width: 193px;
-  padding-left: 11px;
+  padding-left: 14px;
   height: 36px;
 
   font-family: Roboto, Arial, sans-serif;
@@ -1523,15 +1558,41 @@ body > input[type="radio"] {
   border: none;
   border-radius: 18px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.filter-group select:hover {
+.sort select::-ms-expand {
+  display: none;
+}
+
+.filter-sort {
+  position: relative;
+}
+
+.filter-sort::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  top: 15px;
+  right: 14px;
+
+  background: url("../img/sprite.png") 0 -1850px no-repeat;
+}
+
+.filter-sort select:hover {
   color: #323232;
 
   background: rgba(255, 255, 255, 1);
 }
 
-.filter-group select:focus {
+.filter-sort:hover::after {
+  background: url("../img/sprite.png") 0 -1900px no-repeat;
+}
+
+.sort select:focus {
   color: #323232;
 
   background: rgba(255, 255, 255, 1);

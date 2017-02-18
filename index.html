@@ -177,7 +177,7 @@
 						</article>
 					</div>
 					<div class="map clearfix">
-						<div class="map-content"></div>
+						<div id="map" class="map-interactive"></div>
 						<div class="feedback">
 							<p class="feedback-text">
 								Адрес главного офиса<br>
@@ -186,10 +186,10 @@
 							</p>
 							<p class="feedback-text">
 								Для заказов по телефону:<br>
-								<b class="feedback-contacts">8 812 450-25-25</b>
+								<b class="feedback-contacts"><a class="phone" href="tel:+78124502525">8 812 450-25-25</a></b>
 								(с 10 до 20 ежедневно)
 							</p>
-							<a class="btn" href="#">Форма обратной связи</a>
+							<a id="feedback" class="btn" href="#">Форма обратной связи</a>
 						</div>
 					</div>
 				</main>
@@ -221,17 +221,22 @@
 						<p class="copyright-text">Сделано в <a class="copyright-link link-light" href="#">HTML Academy</a> © 2017</p>
 					</div>
 				</footer>
-				<div class="modal-feedback clearfix">
-					<h2 class="modal-title">Мы обязательно вам ответим!</h2>
-					<button class="btn-close" type="button">Закрыть</button>
-					<form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-						<input class="modal-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?">
-						<input class="modal-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?">
-						<textarea class="modal-input modal-comment" name="feedback-comment" rows="5" cols="50" placeholder="Напишите что-нибудь..."></textarea>
-						<button class="btn" type="submit">Отправить</button>
-					</form>
+				<div class="modal-feedback">
+					<div class="modal-overlay"></div>
+					<div class="modal-content clearfix">
+						<h2 class="modal-title">Мы обязательно вам ответим!</h2>
+						<button class="btn-close" type="button">Закрыть</button>
+						<form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+							<input class="modal-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?" required="">
+							<input class="modal-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?" required="">
+							<textarea class="modal-input modal-comment" name="feedback-comment" rows="5" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+							<button class="btn" type="submit">Отправить</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
+		<script src="js/script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-6ojSe9aAfDczOLabu0EiMg7IX-WbDI&signed_in=true&callback=initMap"></script>
 	</body>
 </html>
