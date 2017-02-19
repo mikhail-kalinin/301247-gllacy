@@ -675,7 +675,7 @@ body > input[type="radio"] {
   width: 23.3%;
   display: inline-block;
   vertical-align: top;
-  margin-right: 2.268%;
+  margin-right: 2.26%;
   margin-bottom: 42px;
 
   font-size: 16px;
@@ -1340,11 +1340,27 @@ body > input[type="radio"] {
   margin-top: 6px;
 }
 
-.modal-feedback {
-  display: none;
+/*Модальное окно*/
+@keyframes fadeIn {
+	0% {
+		transform: scale(0.3);
+		opacity: 0.0;
+	}
+	60% {
+		transform: scale(1.02);
+	}
+	80% {
+		transform: scale(0.98);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 .modal-overlay {
+  display: none;
   width:100%;
   height:100%;
   position: fixed;
@@ -1356,6 +1372,7 @@ body > input[type="radio"] {
 }
 
 .modal-content {
+  display: none;
   position: fixed;
   z-index:100;
   top: 50%;
@@ -1423,9 +1440,17 @@ body > input[type="radio"] {
   margin-top: 25px;
 }
 
-.modal-feedback-show {
+.modal-content-show {
+  display: block;
+  animation-name: fadeIn;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;;
+}
+
+.modal-overlay-show {
   display: block;
 }
+
 /*Стили для внутренней страницы*/
 .page-title {
   width: 48.9%;
@@ -1799,13 +1824,18 @@ body > input[type="radio"] {
   text-decoration: none;
 }
 
+.pagination-item:hover .pagination-link {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
 .pagination-item.current .pagination-link {
   color: #323232;
   background: #ffffff;
   border-radius: 50%;
 }
 
-.pagination-item:hover .pagination-link {
+.pagination-item:active .pagination-link {
   color: #323232;
   background: #ffffff;
   border-radius: 50%;
@@ -1838,7 +1868,7 @@ body > input[type="radio"] {
   background-position: 0 -1050px;
 }
 
-.pagination-prev .pagination-link:hover::before {
+.pagination-prev .pagination-link:active::before {
   background-position: 0 -1150px;
 }
 
@@ -1846,7 +1876,7 @@ body > input[type="radio"] {
   background-position: 0 -1100px;
 }
 
-.pagination-next .pagination-link:hover::before {
+.pagination-next .pagination-link:active::before {
   background-position: 0 -1200px;
 }
 

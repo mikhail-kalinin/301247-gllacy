@@ -5,7 +5,7 @@
 		<title>Gllacy Shop</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
 		<link href="css/normalize.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<input type="radio" id="btn-1" name="toggle" checked>
@@ -221,22 +221,23 @@
 						<p class="copyright-text">Сделано в <a class="copyright-link link-light" href="#">HTML Academy</a> © 2017</p>
 					</div>
 				</footer>
-				<div class="modal-feedback">
-					<div class="modal-overlay"></div>
-					<div class="modal-content clearfix">
-						<h2 class="modal-title">Мы обязательно вам ответим!</h2>
-						<button class="btn-close" type="button">Закрыть</button>
-						<form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-							<input class="modal-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?" required="">
-							<input class="modal-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?" required="">
-							<textarea class="modal-input modal-comment" name="feedback-comment" rows="5" cols="50" placeholder="Напишите что-нибудь..."></textarea>
-							<button class="btn" type="submit">Отправить</button>
-						</form>
-					</div>
+
+			</div>
+			<div class="modal-feedback">
+				<div class="modal-overlay"></div>
+				<div class="modal-content clearfix">
+					<h2 class="modal-title">Мы обязательно вам ответим!</h2>
+					<button class="btn-close" type="button">Закрыть</button>
+					<form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+						<input class="modal-input" type="text" name="feedback-name" value="" placeholder="Как вас зовут?" required="">
+						<input class="modal-input" type="email" name="feedback-email" value="" placeholder="Ваша почта для ответа?" required="">
+						<textarea class="modal-input modal-comment" name="feedback-comment" rows="5" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+						<button class="btn" type="submit">Отправить</button>
+					</form>
 				</div>
 			</div>
 		</div>
-		<script src="js/script.js"></script>
+		<script src="js/script.min.js"></script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-6ojSe9aAfDczOLabu0EiMg7IX-WbDI&signed_in=true&callback=initMap"></script>
 	</body>
 </html>
