@@ -456,7 +456,6 @@ body > input[type="radio"] {
 
 .cart-full .btn-delete {
   position: absolute;
-  left: 18px;
   margin: 0;
   margin-top: -9px;
   padding: 0;
@@ -1240,6 +1239,7 @@ body > input[type="radio"] {
 .subscription-title {
   margin: 0;
   width: 100%;
+  min-height: 99px;
 
   font-weight: 400;
   font-size: 16px;
@@ -1275,6 +1275,7 @@ body > input[type="radio"] {
 
 .subscription .btn {
   display: flex;
+  min-width: 129px;
   padding: 10px 16px;
 }
 
